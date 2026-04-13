@@ -2,7 +2,7 @@ import { env } from 'cloudflare:workers';
 
 import { createMcpAgent } from '@cloudflare/playwright-mcp';
 
-export const PlaywrightMCP = createMcpAgent(env.BROWSER);
+export const PlaywrightMCP = createMcpAgent(env.BROWSER, {imageResponses: "allow"} as any);
 
 export default {
   fetch(request: Request, env: Env, ctx: ExecutionContext) {
